@@ -9,7 +9,7 @@ public class Order implements Serializable {
 	
 	
 
-	private Long id;
+	private Long clientId;
 	
 	private Date date;
 	
@@ -17,12 +17,12 @@ public class Order implements Serializable {
 	
 	private  List<Product> products;
 
-	public Long getId() {
-		return id;
+	public Long getClientId() {
+		return clientId;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setClientId(Long clientId) {
+		this.clientId = clientId;
 	}
 
 	public Date getDate() {
