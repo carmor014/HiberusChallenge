@@ -1,4 +1,4 @@
-package com.hiberus.checkout.models.services;
+package com.hiberus.checkout.services;
 
 import com.hiberus.checkout.models.entitys.Order;
 

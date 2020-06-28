@@ -1,9 +1,14 @@
 package com.hiberus.checkout.models.entitys;
 
+
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
+@JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "@id", scope = Order.class)
 public class Order implements Serializable {
 	
 	
@@ -49,10 +54,12 @@ public class Order implements Serializable {
 		this.products = products;
 	}
 	
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+
+	@Override
+	public String toString() {
+		return "Order [Client Id=" + clientId + ", Order Date=" + date + "]";
+	}
+
 	
 
 }

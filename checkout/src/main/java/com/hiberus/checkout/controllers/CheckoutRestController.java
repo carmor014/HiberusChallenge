@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.hiberus.checkout.models.entitys.Order;
-import com.hiberus.checkout.models.services.ICheckoutService;
+import com.hiberus.checkout.services.ICheckoutService;
 
 @RestController
 @RequestMapping("/api")
