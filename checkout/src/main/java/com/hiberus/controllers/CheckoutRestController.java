@@ -1,4 +1,4 @@
-package com.hiberus.checkout.controllers;
+package com.hiberus.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.hiberus.checkout.models.entitys.Order;
-import com.hiberus.checkout.services.ICheckoutService;
+import com.hiberus.models.entities.Order;
+import com.hiberus.services.ICheckoutService;
 
 @RestController
 @RequestMapping("/api")

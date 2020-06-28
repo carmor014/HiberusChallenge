@@ -1,11 +1,11 @@
-package com.hiberus.checkout.services;
+package com.hiberus.services;
 
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import com.hiberus.checkout.models.entitys.Order;
+import com.hiberus.models.entities.Order;
 
 @Service
 public class CheckoutServiceImpl implements ICheckoutService{

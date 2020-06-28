@@ -1,4 +1,4 @@
-package com.hiberus.checkout.models.entitys;
+package com.hiberus.models.entities;
 
 
 import java.io.Serializable;
@@ -11,8 +11,8 @@ import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 @JsonIdentityInfo(generator = ObjectIdGenerators.IntSequenceGenerator.class, property = "@id", scope = Order.class)
 public class Order implements Serializable {
 	
-	
-	
+
+	private static final long serialVersionUID = 1L;
 
 	private Long clientId;
 	
