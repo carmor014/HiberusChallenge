@@ -19,7 +19,7 @@ public class CheckoutServiceImpl implements ICheckoutService{
 
 
 	@Override
-	public String create(Order order) {
+	public String sendOrder(Order order) {
 		amqpTemplate.convertAndSend(exchange, "", order);
 		System.out.println("Send msg = " + order);
 		return "Order received";

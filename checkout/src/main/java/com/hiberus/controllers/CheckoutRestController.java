@@ -28,7 +28,7 @@ public class CheckoutRestController {
 	@ResponseStatus(HttpStatus.CREATED)
 	public String create(@RequestBody Order order) {
 		try {
-			String response = checkoutService.create(order);
+			String response = checkoutService.sendOrder(order);
 			return response;
 		} catch (Exception e) {
 			System.out.println(e);
