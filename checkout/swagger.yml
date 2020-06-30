@@ -1,0 +1,96 @@
+---
+swagger: '2.0'
+info:
+  description: '"Spring Boot REST API for Online Store"'
+  version: 1.0.0
+  title: Spring Boot REST API
+  contact:
+    name: Carlos Mora
+    url: https://github.com/carmor014/HiberusChallenge
+    email: carmor_014@hotmail.com
+  license:
+    name: Apache License Version 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0"
+host: localhost:8080
+basePath: "/"
+tags:
+- name: checkout-rest-controller
+  description: Checkout Rest Controller
+paths:
+  "/api/checkout":
+    post:
+      tags:
+      - checkout-rest-controller
+      summary: create
+      operationId: createUsingPOST
+      consumes:
+      - application/json
+      produces:
+      - "*/*"
+      parameters:
+      - in: body
+        name: order
+        description: order
+        required: true
+        schema:
+          "$ref": "#/definitions/Order"
+      responses:
+        '201':
+          description: Created
+          schema:
+            type: string
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  "/api/ping":
+    get:
+      tags:
+      - checkout-rest-controller
+      summary: index
+      operationId: indexUsingGET
+      produces:
+      - "*/*"
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: string
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+definitions:
+  Order:
+    type: object
+    properties:
+      clientId:
+        type: integer
+        format: int64
+      date:
+        type: string
+        format: date-time
+      direction:
+        type: string
+      products:
+        type: array
+        items:
+          "$ref": "#/definitions/Product"
+    title: Order
+  Product:
+    type: object
+    properties:
+      cost:
+        type: number
+        format: double
+      id:
+        type: integer
+        format: int64
+      quantity:
+        type: integer
+        format: int32
+    title: Product
