@@ -57,5 +57,6 @@ Para validar que los mensajes llegaron a persistencia por favor utilizar un ide 
 Los parámetros de conexión a la Bases de datos estan los en los archivos properties de los dos servicios que tienen persistencia
 
 bill\src\main\resources\application.properties
+
 checkout\src\main\resources\application.properties
  
