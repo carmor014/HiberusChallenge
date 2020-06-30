@@ -1,0 +1,47 @@
+{
+    "exchanges": [
+        {
+          "name": "fanout-exchange",
+          "vhost": "/",
+          "type": "fanout",
+          "durable": true,
+          "auto_delete": false,
+          "internal": false,
+          "arguments": {}
+        }
+      ],
+    "users": [
+      {
+        "name": "user",  
+        "password_hash": "password",
+        "hashing_algorithm": "rabbit_password_hashing_sha256",
+        "tags": "administrator"
+      }
+    ],
+
+    "vhosts":[
+        {"name":"/"}
+    ],
+    "queues":[
+        {"name":"logisticQueue","vhost":"/","durable":true,"auto_delete":false,"arguments":{}},
+        {"name":"billQueue","vhost":"/","durable":true,"auto_delete":false,"arguments":{}}
+    ],
+    "bindings": [
+      {
+        "source": "fanout-exchange",
+        "vhost": "/",
+        "destination": "logisticQueue",
+        "destination_type": "queue",
+        "routing_key": "",
+        "arguments": {}
+      },
+      {
+        "source": "fanout-exchange",
+        "vhost": "/",
+        "destination": "billQueue",
+        "destination_type": "queue",
+        "routing_key": "",
+        "arguments": {}
+      }
+    ]
+}
